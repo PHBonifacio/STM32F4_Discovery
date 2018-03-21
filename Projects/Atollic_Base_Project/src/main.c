@@ -27,10 +27,14 @@
 
 /* Includes */
 #include "stm32f4xx.h"
-
-/* Private macro */
+/* Defines */
+#define TICK ( 168e3 )
 /* Private variables */
+uint32_t delay_time = 0;
+uint32_t systick_time = 0;
 /* Private function prototypes */
+void HardwareConfig();
+void Delay_ms( uint32_t milis);
 /* Private functions */
 
 /**
@@ -42,13 +46,43 @@
 */
 int main(void)
 {
-  int i = 0;
 
-  /* TODO - Add your application code here */
+	HardwareConfig();
 
-  /* Infinite loop */
-  while (1)
-  {
-	i++;
-  }
+	while (1)
+	{
+		Delay_ms(500);
+		if( ( GPIOD->ODR&GPIO_ODR_ODR_12 ) != 0x0)
+		{
+			SET_BIT( GPIOD->BSRRH, ( GPIO_BSRR_BS_12|GPIO_BSRR_BS_13|GPIO_BSRR_BS_14|GPIO_BSRR_BS_15 ));
+		}
+		else
+		{
+			SET_BIT( GPIOD->BSRRL, ( GPIO_BSRR_BS_12|GPIO_BSRR_BS_13|GPIO_BSRR_BS_14|GPIO_BSRR_BS_15 ));
+		}
+	}
+}
+void SysTick_Handler(void)
+{
+	systick_time++;
+	delay_time++;
+}
+void HardwareConfig()
+{
+  SysTick_Config(SystemCoreClock / 1000);
+  /*  enable clock for GPIOD  */
+  RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
+  /*  set PD12, PD13, PD14 and PD15 as output */
+  GPIOD->MODER |= ( GPIO_MODER_MODER12_0|GPIO_MODER_MODER13_0|GPIO_MODER_MODER14_0|GPIO_MODER_MODER15_0 );
+  /*  set ports as push-pull  */
+  GPIOD->OTYPER = 0;
+  /*  configure ports as high speed */
+  GPIOD->OSPEEDR |= ( GPIO_OSPEEDER_OSPEEDR12|GPIO_OSPEEDER_OSPEEDR13|GPIO_OSPEEDER_OSPEEDR14|GPIO_OSPEEDER_OSPEEDR15 );
+  /* turn on leds */
+  GPIOD->BSRRL |= ( GPIO_BSRR_BS_12|GPIO_BSRR_BS_13|GPIO_BSRR_BS_14|GPIO_BSRR_BS_15 );
+}
+void Delay_ms( uint32_t milis)
+{
+	delay_time = 0;
+	while (delay_time < milis);
 }

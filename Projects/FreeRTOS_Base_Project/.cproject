@@ -46,10 +46,10 @@
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 								</option>
 								<option id="com.atollic.truestudio.gcc.directories.select.1279620824" name="Include path" superClass="com.atollic.truestudio.gcc.directories.select" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;C:\Users\Pedro Bonifácio\Documents\STM32\STM32F4_GitHub\Projects\FreeRTOS_Base_Project\FreeRTOS&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\Users\Pedro Bonifácio\Documents\STM32\STM32F4_GitHub\Projects\FreeRTOS_Base_Project\FreeRTOS\Source\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\Users\Pedro Bonifácio\Documents\STM32\STM32F4_GitHub\Projects\FreeRTOS_Base_Project\FreeRTOS\Source\portable\GCC\ARM_CM4F&quot;"/>
 									<listOptionValue builtIn="false" value="../src"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\Pedro Bonifácio\Atollic\TrueSTUDIO\STM32_workspace_9.0\FreeRTOS\FreeRTOS&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\Pedro Bonifácio\Atollic\TrueSTUDIO\STM32_workspace_9.0\FreeRTOS\FreeRTOS\Source\portable\GCC\ARM_CM4F&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\Pedro Bonifácio\Atollic\TrueSTUDIO\STM32_workspace_9.0\FreeRTOS\FreeRTOS\Source\include&quot;"/>
 									<listOptionValue builtIn="false" value="../Libraries/CMSIS/Include"/>
 									<listOptionValue builtIn="false" value="../Libraries/Device/STM32F4xx/Include"/>
 									<listOptionValue builtIn="false" value="../Libraries/STM32F4xx_StdPeriph_Driver/inc"/>

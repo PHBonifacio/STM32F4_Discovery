@@ -9,10 +9,15 @@
 
 ### Folders 
  - [Projects](/Projects)
-- [Documents](/Documentation)
+- [Documents](/Documents)
 
 ### Project List
-
+- [Atollic Base Project](/Projects/Atollic_Base_Project)
+   - Simple project to be used as base for future projects.
+- [FreeRTOS Base Project](/Projects/FreeRTOS_Base_Project)
+   - Simple project to be used as base for future projects using [FreeRTOS](https://www.freertos.org/).
+- [STM32F4 DSP and standard peripherals library](/Projects/STM32F4xx_StdPeriph_Driver)
+   - Low level drivers covering the peripherals, belonging to the STM32F4 series. Created by STMicroelectronics. [More info](http://www.st.com/en/embedded-software/stsw-stm32065.html)
 ### Board Information
 ##### STM32F4DISCOVERY - STMicroelectronics
 - STM32F407VGT6 microcontroller featuring 32-bit ARM® Cortex® -M4 with FPU core, 1-Mbyte Flash memory, 192-Kbyte RAM in an LQFP100 package
